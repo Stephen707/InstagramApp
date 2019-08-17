@@ -18,7 +18,6 @@ import com.parse.ParseUser;
 
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
-    public static String usernameCookie = "";
 
     TextInputLayout textpassword;
     EditText etUser;
@@ -42,26 +41,26 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
         ParseUser currentUser = ParseUser.getCurrentUser();
-       /* if (currentUser != null) {
+      if (currentUser != null) {
 
             //goActivity();
-        } else {*/
+        } else {
 
 
-            BtnLogin.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    String username = etUser.getText().toString();
-                    String password = textpassword.getEditText().getText().toString();
-                    if (username.isEmpty() && password.isEmpty()) {
-                        Toast.makeText(LoginActivity.this, "All fields required", Toast.LENGTH_SHORT).show();
-                    } else {
-                        login(username, password);
-                    }
+          BtnLogin.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  String username = etUser.getText().toString();
+                  String password = textpassword.getEditText().getText().toString();
+                  if (username.isEmpty() && password.isEmpty()) {
+                      Toast.makeText(LoginActivity.this, "All fields required", Toast.LENGTH_SHORT).show();
+                  } else {
+                      login(username, password);
+                  }
 
-                }
-            });
-        //}
+              }
+          });
+      }
         tvSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
